@@ -7,8 +7,52 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="center">
-    <span class="hello">Hello IRCake</span>
-  </div>
+
+  <header class="header">
+    <h1 class="site-title">IRCake's Work</h1>
+    <nav class="topbar">
+      <button class="tab active" data-tab="traditional">Traditional</button>
+      <button class="tab" data-tab="digital">Digital</button>
+      <button class="tab" data-tab="about">About</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="gallery-panel active" id="traditional">
+      <div class="gallery">
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+      </div>
+    </section>
+
+    <section class="gallery-panel" id="digital">
+      <div class="gallery">
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+      </div>
+    </section>
+
+    <section class="gallery-panel" id="about">
+      <div class="about-content">
+        <p>About content coming soon.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
 </body>
 </html>
