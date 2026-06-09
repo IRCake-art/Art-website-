@@ -1,0 +1,3 @@
+# wrangler.toml
+name = 'art-website'
+pages_build_output_dir = "."
