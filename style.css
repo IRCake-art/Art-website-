@@ -11,7 +11,7 @@ html, body {
 body {
   background: #f5f5f5;
   color: #111;
-  font-family: sans-serif;
+  font-family: 'Sen', sans-serif;
 }
 
 /* ── Header ── */
@@ -52,6 +52,7 @@ body {
   border: none;
   border-bottom: 3px solid transparent;
   cursor: pointer;
+  font-family: 'Sen', sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
   color: #666;
@@ -71,41 +72,77 @@ body {
 /* ── Panels ── */
 .gallery-panel {
   display: none;
-  padding: 2rem 1.5rem;
+  padding: 2rem 40px;
 }
 
 .gallery-panel.active {
   display: block;
 }
 
-/* ── Gallery grid ── */
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
+  columns: 3;
+  column-gap: 16px;
 }
 
-/* ── About layout ── */
-#about.gallery-panel {
-  padding: 0;
+@media (max-width: 900px) {
+  .gallery { columns: 2; }
 }
 
-.about-content {
-  display: flex;
-  min-height: calc(100vh - 180px);
+@media (max-width: 500px) {
+  .gallery { columns: 1; }
 }
 
-.about-image {
-  width: 45%;
-  flex-shrink: 0;
-  object-fit: cover;
-}
-
-.about-text {
-  flex: 1;
-  padding: 3rem;
-}
-  aspect-ratio: 1;
+/* ── Gallery items ── */
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  overflow: hidden;
   background: #ddd;
-  border-radius: 6px;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.15s;
+}
+
+.gallery-item img:hover {
+  opacity: 0.85;
+}
+
+/* ── Lightbox ── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  font-family: 'Sen', sans-serif;
 }

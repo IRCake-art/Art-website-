@@ -3,58 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IRCake</title>
+  <title>Art of Raffy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header class="header">
     <img class="profile-icon" src="/images/icon.webp" alt="IRCake">
-    <h1 class="site-title">IRCake's Work</h1>
+    <h1 class="site-title">Art of Raffy</h1>
     <nav class="topbar">
-      <button class="tab active" data-tab="traditional">Traditional</button>
+      <button class="tab active" data-tab="doodle">Doodles</button>
       <button class="tab" data-tab="digital">Digital</button>
-      <button class="tab" data-tab="about">About</button>
     </nav>
   </header>
 
   <main>
-    <section class="gallery-panel active" id="traditional">
-      <div class="gallery">
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-      </div>
+    <section class="gallery-panel active" id="doodle">
+      <div class="gallery"></div>
     </section>
 
     <section class="gallery-panel" id="digital">
-      <div class="gallery">
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
-      </div>
+      <div class="gallery"></div>
     </section>
 
-    <section class="gallery-panel" id="about">
-      <div class="about-content">
-        <img class="about-image" src="/images/icon.webp" alt="IRCake">
-        <div class="about-text">
-          <p>About content coming soon.</p>
-        </div>
-      </div>
-    </section>
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightbox-close">&times;</button>
+      <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    </div>
   </main>
 
   <script src="app.js"></script>
