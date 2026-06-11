@@ -1,11 +1,17 @@
 // ── Gallery rendering ────────────────────────────────────────────────────────
+const imageCache = {};
+
 async function renderGallery(tab) {
   const gallery = document.querySelector(`#${tab} .gallery`);
-  gallery.innerHTML = '';
+
+  if (imageCache[tab]) {
+    return;
+  }
 
   try {
     const res = await fetch(`/api/images/${tab}`);
     const images = await res.json();
+    imageCache[tab] = true;
 
     images.forEach(({ src, alt }) => {
       const item = document.createElement('div');
