@@ -23,7 +23,7 @@ export async function onRequestGet({ params, env }) {
     },
     body: JSON.stringify({
       expression: `folder:${folder}`,
-      sort_by: [{ public_id: 'asc' }],
+      sort_by: [{ public_id: 'desc' }],
       max_results: 100,
     }),
   });
