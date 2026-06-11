@@ -23,7 +23,6 @@ export async function onRequestGet({ params, env }) {
     },
     body: JSON.stringify({
       expression: `folder:${folder}`,
-      sort_by: [{ public_id: 'desc' }],
       max_results: 100,
     }),
   });
@@ -37,10 +36,14 @@ export async function onRequestGet({ params, env }) {
   }
 
   const data = await res.json();
-  const images = data.resources.map(r => ({
-    src: r.secure_url,
-    alt: r.public_id,
-  }));
+  const images = data.resources
+    .map(r => ({
+      src: r.secure_url,
+      alt: r.public_id,
+      num: parseInt(r.public_id.match(/_(\d+)$/)?.[1] ?? '0', 10),
+    }))
+    .sort((a, b) => b.num - a.num)
+    .map(({ src, alt }) => ({ src, alt }));
 
   return new Response(JSON.stringify(images), {
     headers: { 'Content-Type': 'application/json' },
